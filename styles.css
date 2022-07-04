@@ -1,0 +1,18 @@
+body {
+    background-color: aqua;
+}
+
+main {
+    margin: 0 auto;
+    max-width: 1024px;
+}
+
+main h1 {
+    text-align: center;
+}
+
+main img {
+    display: block;
+    width: 50%;
+    margin: 0 auto;
+}
