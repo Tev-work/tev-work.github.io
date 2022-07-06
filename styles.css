@@ -5,6 +5,7 @@ body {
 main {
     margin: 0 auto;
     max-width: 1024px;
+    padding-bottom: 30px;
 }
 
 main h1 {
@@ -17,8 +18,19 @@ main > img {
     margin: 30px auto 0;
 }
 
+iframe {
+    width: 100%;
+    height: 30vw;
+    border: none;
+    margin: 30px 0;
+}
+
 @media screen and (max-width: 700px) {
     main > img {
         margin-top: 10px;
+    }
+
+    iframe {
+        height: 250px;
     }
 }
