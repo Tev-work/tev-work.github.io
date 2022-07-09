@@ -3,8 +3,21 @@
     src: url('Italianno-Regular.woff2') format("woff2");
 }
 
+@font-face {
+    font-family: 'Garamond';
+    src: url('EBGaramond-Regular') format("woff2");
+}
+
+@font-face {
+    font-family: 'Garamond';
+    font-weight: bold;
+    src: url('EBGaramond-Bold.woff2') format("woff2");
+}
+
 body {
     background: linear-gradient(#c9e8ff, 50%, #fff);
+    font-family: 'Garamond', 'Times New Roman', Times, serif;
+    font-size: 20px;
 }
 
 main {
