@@ -1,11 +1,11 @@
-@font-face {
+/* @font-face {
     font-family: 'Italianno';
     src: url('Italianno-Regular.woff2') format("woff2");
-}
+} */
 
 @font-face {
     font-family: 'Garamond';
-    src: url('EBGaramond-Regular') format("woff2");
+    src: url('EBGaramond-Regular.woff2') format("woff2");
 }
 
 @font-face {
@@ -31,11 +31,11 @@ main h1 {
 }
 
 h1, h2, h3, h4 {
-    font-family: 'Italianno', 'Times New Roman', Times, serif;
+    font-family: 'Garamond', 'Times New Roman', Times, serif;
 }
 
 /* workaround for not-universally-working size-adjust for font-face */
-h1 {
+/* h1 {
     font-size: 3em;
 }
 
@@ -49,7 +49,7 @@ h3 {
 
 h4 {
     font-size: 1.5em;
-}
+} */
 
 main > img {
     display: block;
