@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 'Italianno';
+    src: url('Italianno-Regular.woff2') format("woff2");
+}
+
 body {
     background: linear-gradient(#c9e8ff, 50%, #fff);
 }
@@ -10,6 +15,27 @@ main {
 
 main h1 {
     text-align: center;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Italianno', 'Times New Roman', Times, serif;
+}
+
+/* workaround for not-universally-working size-adjust for font-face */
+h1 {
+    font-size: 3em;
+}
+
+h2 {
+    font-size: 2.25em;
+}
+
+h3 {
+    font-size: 1.76em;
+}
+
+h4 {
+    font-size: 1.5em;
 }
 
 main > img {
