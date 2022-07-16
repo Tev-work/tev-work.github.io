@@ -86,12 +86,15 @@ nav a {
     box-shadow: 0px 0px 25px 10px rgb(201 232 255 / 50%);
 }
 
-
-iframe {
+iframe, #map {
     width: 100%;
     height: 30vw;
     border: none;
     margin: 30px 0;
+}
+
+.card .card-body {
+    font-family: 'Garamond', 'Times New Roman', Times, serif;
 }
 
 @media screen and (max-width: 700px) {
@@ -99,7 +102,7 @@ iframe {
         margin-top: 10px;
     }
 
-    iframe {
+    iframe, #map {
         height: 250px;
     }
 }

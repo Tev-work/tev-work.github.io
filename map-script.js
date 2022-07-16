@@ -4,9 +4,43 @@ async function main() {
     await loadExternalScript('https://api.mapy.cz/loader.js');
     
     window.Loader.async = true;
-    await new Promise(resolve => window.Loader.load(null, null, resolve));
+    await new Promise(resolve => window.Loader.load(null, { poi: true }, resolve));
 
-    console.log('tadaaaaa');
+    const mapCenter = window.SMap.Coords.fromWGS84(14.71, 49.765);
+    const map = new window.SMap(JAK.gel("map"), mapCenter, 13);
+    map.addDefaultLayer(SMap.DEF_BASE).enable();
+    map.addDefaultControls();
+    
+    const markerLayer = new SMap.Layer.Marker(undefined, { poiTooltip: true });
+    map.addLayer(markerLayer);
+    markerLayer.enable();
+
+    // Seznam je na peachu
+    // const poiDataProvider = map.createDefaultDataProvider();
+    // poiDataProvider.setOwner(map);
+    // poiDataProvider.addLayer(markerLayer);
+    // poiDataProvider.setMapSet(SMap.MAPSET_BASE);
+    // poiDataProvider.enable();
+
+    const pecinovTitle = new SMap.Card();
+    pecinovTitle.getHeader().innerHTML = '<h3>Dvůr Pecínov</h3>';
+    pecinovTitle.getBody().innerHTML = 'Místo svatby';
+
+    const pecinovCoords = window.SMap.Coords.fromWGS84(14.7349, 49.75);
+    // TODO options for something displayed even before click?
+    // ORRR at least styles for title
+    const pecinovMarker = new SMap.Marker(pecinovCoords, 'dvurPecinov', {});
+    pecinovMarker.decorate(SMap.Marker.Feature.Card, pecinovTitle);
+    markerLayer.addMarker(pecinovMarker);
+
+    const struharovTitle = new SMap.Card();
+    struharovTitle.getHeader().innerHTML = '<h3>Vlaková zastávka</h3>';
+    struharovTitle.getBody().innerHTML = 've Struhařově, kde vás rádi vyzvedneme autem';
+
+    const struharovCoords = window.SMap.Coords.fromWGS84(14.7493, 49.7621);
+    const struharovMarker = new SMap.Marker(struharovCoords, 'struharovZastavka', {});
+    struharovMarker.decorate(SMap.Marker.Feature.Card, struharovTitle);
+    markerLayer.addMarker(struharovMarker);
 }
   
 function loadExternalScript(url) {
