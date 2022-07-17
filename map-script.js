@@ -22,15 +22,14 @@ async function main() {
     // poiDataProvider.setMapSet(SMap.MAPSET_BASE);
     // poiDataProvider.enable();
 
-    const pecinovMarkerCoords = window.SMap.Coords.fromWGS84(14.75, 49.78);
-    const pecinovTitle = new SMap.Card({ close: false });
+    const pecinovTitle = new SMap.Card();
     pecinovTitle.getHeader().innerHTML = '<h3>Dvůr Pecínov</h3>';
     pecinovTitle.getBody().innerHTML = 'Místo svatby';
 
     const pecinovCoords = window.SMap.Coords.fromWGS84(14.7349, 49.75);
-    // AT LEAST TRY TO MAKE IT BIGGERER via optionsObj.size
-    const pecinovMarker = new SMap.Marker(pecinovCoords, 'dvurPecinov', { title: 'PLS WORK' });
-    setTimeout(() => pecinovTitle.anchorTo(pecinovMarkerCoords), 2500);
+    // TODO options for something displayed even before click?
+    // ORRR at least styles for title
+    const pecinovMarker = new SMap.Marker(pecinovCoords, 'dvurPecinov', {});
     pecinovMarker.decorate(SMap.Marker.Feature.Card, pecinovTitle);
     markerLayer.addMarker(pecinovMarker);
 
