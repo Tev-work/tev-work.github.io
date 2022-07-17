@@ -64,6 +64,14 @@ nav {
     background-color: hsl(206deg 100% 66%);
 }
 
+nav .burger {
+    display: none;
+}
+
+nav .burger a {
+    cursor: pointer;
+}
+
 nav ul {
     display: flex;
     justify-content: space-between;
@@ -84,7 +92,7 @@ nav a {
     padding: 20px;
 }
 
-nav a:first-child {
+nav ul a:first-child {
     padding-left: 0;
 }
 
@@ -125,6 +133,19 @@ iframe, #map {
 }
 
 @media screen and (max-width: 700px) {
+    nav {
+        justify-content: end;
+        display: flex;
+    }
+    
+    nav .burger {
+        display: block;
+    }
+
+    nav ul {
+        display: none;
+    }
+
     main > img {
         margin-top: 10px;
     }

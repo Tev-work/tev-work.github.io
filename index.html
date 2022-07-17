@@ -7,41 +7,44 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <nav>
+      <div class="burger">
+        <a>D</a>
+      </div>
+      <ul>
+        <li>
+          <a href="#kontakt">
+            Kontakt
+          </a>
+        </li>
+        <li>
+          <a href="#doprava">
+            Doprava
+          </a>
+        </li>
+        <li>
+          <a href="#ubytovani">
+            Ubytování
+          </a>
+        </li>
+        <li>
+          <a href="#dresscode">
+            Dress code
+          </a>
+        </li>
+        <li>
+          <a href="#dary">
+            Dary
+          </a>
+        </li>
+        <li>
+          <a href="#program">
+            Program
+          </a>
+        </li>
+      </ul>
+    </nav>
     <main>
-      <nav>
-        <ul>
-          <li>
-            <a href="#kontakt">
-              Kontakt
-            </a>
-          </li>
-          <li>
-            <a href="#doprava">
-              Doprava
-            </a>
-          </li>
-          <li>
-            <a href="#ubytovani">
-              Ubytování
-            </a>
-          </li>
-          <li>
-            <a href="#dresscode">
-              Dress code
-            </a>
-          </li>
-          <li>
-            <a href="#dary">
-              Dary
-            </a>
-          </li>
-          <li>
-            <a href="#program">
-              Program
-            </a>
-          </li>
-        </ul>
-      </nav>
       <img src="vlastovky.png" />
       <h1>Svatba Petra a Terky</h1>
       <p>
@@ -96,6 +99,17 @@
         <h2>Formulář</h2>
         TODO(?!)
       </div>
+      <script>
+        const burgerBtn = document.querySelector('.burger a');
+        burgerBtn.addEventListener('click', toggleNav);
+
+        let navOpen = false;
+        const nav = document.querySelector('nav ul');
+        function toggleNav() {
+          navOpen = !navOpen;
+          nav.style.display = navOpen ? 'block' : 'none';
+        }
+      </script>
       <script src="map-script.js"></script>
     </main>
   </body>
