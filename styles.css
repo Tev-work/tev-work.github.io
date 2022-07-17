@@ -97,6 +97,14 @@ iframe, #map {
     font-family: 'Garamond', 'Times New Roman', Times, serif;
 }
 
+#map .card {
+    padding: 12px;
+}
+
+.card h3 {
+    margin: 0 0 6px 0;
+}
+
 @media screen and (max-width: 700px) {
     main > img {
         margin-top: 10px;
