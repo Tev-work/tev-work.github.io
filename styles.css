@@ -18,7 +18,7 @@ body {
     background: linear-gradient(#c9e8ff, 50%, #fff);
     font-family: 'Garamond', 'Times New Roman', Times, serif;
     font-size: 20px;
-    margin-top: 0;
+    margin: 0;
 }
 
 main {
@@ -61,17 +61,15 @@ main > img {
 nav {
     position: sticky;
     top: 0;
-    background-color: #c9e8ff;
-    /* box-shadow: 0px 0px 25px 10px #C9E8FF; */
-    box-shadow: 10px 0px 25px 10px rgb(201 232 255 / 50%);
-    margin: 0 -20px 0 -20px;
+    background-color: hsl(206deg 100% 66%);
 }
 
 nav ul {
     display: flex;
     justify-content: space-between;
     padding-inline-start: 0;
-    margin: 0;
+    margin: 0 auto;
+    max-width: 1024px;
 }
 
 nav li {
@@ -81,9 +79,13 @@ nav li {
 nav a {
     text-decoration: none;
     display: inline-block;
-    background-color: #c9e8ff;
+    background-color: hsl(206deg 100% 66%);
+    color: #fff;
     padding: 20px;
-    box-shadow: 0px 0px 25px 10px rgb(201 232 255 / 50%);
+}
+
+nav a:first-child {
+    padding-left: 0;
 }
 
 iframe, #map {
@@ -105,6 +107,23 @@ iframe, #map {
     margin: 0 0 6px 0;
 }
 
+#map-link {
+    text-align: right;
+}
+
+#map-link + div h2 {
+    margin-top: 5px;
+}
+
+#map-link a {
+    display: inline-block;
+    text-decoration: none;
+    padding: 10px 15px;
+    background: hsl(206deg 100% 66%);
+    color: #fff;
+    border-radius: 5px;
+}
+
 @media screen and (max-width: 700px) {
     main > img {
         margin-top: 10px;
@@ -112,5 +131,16 @@ iframe, #map {
 
     iframe, #map {
         height: 250px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    main {
+        padding: 20px;
+    }
+
+    nav {
+        padding-left: 20px;
+        padding-right: 20px;
     }
 }
