@@ -138,6 +138,7 @@ iframe, #map {
     nav .burger {
         justify-content: end;
         display: flex;
+        flex-direction: row-reverse;
     }
 
     nav ul {
@@ -193,6 +194,10 @@ iframe, #map {
 
     iframe, #map {
         height: 250px;
+    }
+
+    #map-link + div h2 {
+        margin-top: 24px;
     }
 }
 
