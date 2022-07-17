@@ -9,7 +9,11 @@
   <body>
     <nav>
       <div class="burger">
-        <a>D</a>
+        <a>
+          <span class="bar1"></span>
+          <span class="bar2"></span>
+          <span class="bar3"></span>
+        </a>
       </div>
       <ul>
         <li>
@@ -104,10 +108,10 @@
         burgerBtn.addEventListener('click', toggleNav);
 
         let navOpen = false;
-        const nav = document.querySelector('nav ul');
+        const nav = document.querySelector('nav');
         function toggleNav() {
           navOpen = !navOpen;
-          nav.style.display = navOpen ? 'block' : 'none';
+          nav.classList[navOpen ? 'add' : 'remove']('menu-expanded');
         }
       </script>
       <script src="map-script.js"></script>

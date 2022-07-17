@@ -62,6 +62,8 @@ nav {
     position: sticky;
     top: 0;
     background-color: hsl(206deg 100% 66%);
+    /* for being in front of the map */
+    z-index: 2;
 }
 
 nav .burger {
@@ -133,17 +135,56 @@ iframe, #map {
 }
 
 @media screen and (max-width: 700px) {
-    nav {
+    nav .burger {
         justify-content: end;
         display: flex;
-    }
-    
-    nav .burger {
-        display: block;
     }
 
     nav ul {
         display: none;
+    }
+
+    nav.menu-expanded {
+        display: block;
+    }
+
+    nav.menu-expanded ul {
+        display: block;
+    }
+
+    nav a {
+        padding: 15px;
+    }
+    
+    .bar1, .bar2, .bar3 {
+        width: 32px;
+        height: 4px;
+        background-color: #fff;
+        margin: 6px 0;
+        transition: 0.4s;
+        display: block;
+    }
+
+    .bar1 {
+        margin-top: 0;
+    }
+
+    .bar3 {
+        margin-bottom: 0;
+    }
+
+    nav.menu-expanded .bar1 {
+        -webkit-transform: rotate(-45deg) translate(-7px, 6px);
+        transform: rotate(-45deg) translate(-7px, 6px);
+    }
+
+    nav.menu-expanded .bar2 {
+        opacity: 0;
+    }
+
+    nav.menu-expanded .bar3 {
+        -webkit-transform: rotate(45deg) translate(-8px, -8px);
+        transform: rotate(45deg) translate(-8px, -8px);
     }
 
     main > img {
