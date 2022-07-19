@@ -6,8 +6,12 @@ async function main() {
     window.Loader.async = true;
     await new Promise(resolve => window.Loader.load(null, null, resolve));
 
-    const mapCenter = window.SMap.Coords.fromWGS84(14.71, 49.765);
-    const map = new window.SMap(JAK.gel("map"), mapCenter, 13);
+    const mapCenter = window.SMap.Coords.fromWGS84(14.74, 49.769);
+
+    const viewportWidth = document.documentElement.clientWidth;
+    let zoomLevel = viewportWidth > 1000 ? 13 : 12;
+    if (viewportWidth < 700) (zoomLevel = 11);
+    const map = new window.SMap(JAK.gel("map"), mapCenter, zoomLevel);
     map.addDefaultLayer(SMap.DEF_BASE).enable();
     map.addDefaultControls();
     
