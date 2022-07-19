@@ -105,6 +105,10 @@ iframe, #map {
     margin: 30px 0;
 }
 
+.card {
+    width: 250px !important;
+}
+
 .card .card-body {
     font-family: 'Garamond', 'Times New Roman', Times, serif;
 }
