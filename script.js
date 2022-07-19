@@ -1,6 +1,24 @@
 main();
 
 async function main() {
+    const navElements = document.querySelectorAll('nav li');
+    navElements.forEach(elm => elm.addEventListener('click', event => {
+        const element = document.querySelector(event.target.hash);
+        const scrollTargetOffset = element.getBoundingClientRect().top - 75;
+
+        document.documentElement.clientWidth < 701 && document.querySelector('.burger a').click();
+        setTimeout(() => window.scrollBy({
+            top: scrollTargetOffset,
+            behavior: 'smooth',
+        }));
+
+        event.preventDefault();
+    }));
+
+    await map();
+}
+
+async function map() {
     await loadExternalScript('https://api.mapy.cz/loader.js');
     
     window.Loader.async = true;

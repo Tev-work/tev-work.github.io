@@ -140,10 +140,20 @@ iframe, #map {
 }
 
 @media screen and (max-width: 700px) {
+    main {
+        margin-top: 54px;
+    }
+
+    nav {
+        position: fixed;
+        width: 100%;
+    }
+
     nav .burger {
         justify-content: end;
         display: flex;
         flex-direction: row-reverse;
+        padding-right: 25px;
     }
 
     nav ul {
