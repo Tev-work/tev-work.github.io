@@ -1,12 +1,22 @@
 main();
 
 async function main() {
-    const navElements = document.querySelectorAll('nav li');
+    let navOpen = false;
+    const nav = document.querySelector('nav');
+    function toggleNav() {
+      navOpen = !navOpen;
+      nav.classList[navOpen ? 'add' : 'remove']('menu-expanded');
+    }
+
+    const burgerBtn = nav.querySelector('.burger a');
+    burgerBtn.addEventListener('click', toggleNav);
+
+    const navElements = nav.querySelectorAll('li');
     navElements.forEach(elm => elm.addEventListener('click', event => {
         const element = document.querySelector(event.target.hash);
         const scrollTargetOffset = element.getBoundingClientRect().top - 75;
 
-        document.documentElement.clientWidth < 701 && document.querySelector('.burger a').click();
+        document.documentElement.clientWidth < 701 && toggleNav();
         setTimeout(() => window.scrollBy({
             top: scrollTargetOffset,
             behavior: 'smooth',
