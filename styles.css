@@ -1,0 +1,217 @@
+/* @font-face {
+    font-family: 'Italianno';
+    src: url('Italianno-Regular.woff2') format("woff2");
+} */
+
+@font-face {
+    font-family: 'Garamond';
+    src: url('EBGaramond-Regular.woff2') format("woff2");
+}
+
+@font-face {
+    font-family: 'Garamond';
+    font-weight: bold;
+    src: url('EBGaramond-Bold.woff2') format("woff2");
+}
+
+body {
+    background: linear-gradient(#c9e8ff, 50%, #fff);
+    font-family: 'Garamond', 'Times New Roman', Times, serif;
+    font-size: 20px;
+    margin: 0;
+}
+
+main {
+    margin: 0 auto;
+    max-width: 1024px;
+    padding-bottom: 30px;
+    text-align: justify;
+}
+
+main h1 {
+    text-align: center;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Garamond', 'Times New Roman', Times, serif;
+}
+
+main > img {
+    display: block;
+    width: 50%;
+    margin: 30px auto 0;
+}
+
+nav {
+    position: sticky;
+    top: 0;
+    background-color: hsl(206deg 100% 66%);
+    /* for being in front of the map */
+    z-index: 2;
+}
+
+nav .burger {
+    display: none;
+}
+
+nav .burger a {
+    cursor: pointer;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-between;
+    padding-inline-start: 0;
+    margin: 0 auto;
+    max-width: 1024px;
+}
+
+nav li {
+    list-style-type: none;
+}
+
+nav a {
+    text-decoration: none;
+    display: inline-block;
+    background-color: hsl(206deg 100% 66%);
+    color: #fff;
+    padding: 20px;
+}
+
+nav ul a:first-child {
+    padding-left: 0;
+}
+
+#map {
+    width: 100%;
+    height: 40vw;
+    max-height: 470px;
+    border: none;
+    margin: 30px 0;
+}
+
+iframe {
+    width: 100%;
+    height: 500px;
+}
+
+.card {
+    width: 250px !important;
+}
+
+.card .card-body {
+    font-family: 'Garamond', 'Times New Roman', Times, serif;
+}
+
+#map .card {
+    padding: 12px;
+}
+
+.card h3 {
+    margin: 0 0 6px 0;
+}
+
+#map-link {
+    text-align: right;
+}
+
+#map-link + div h2 {
+    margin-top: 5px;
+}
+
+#map-link a {
+    display: inline-block;
+    text-decoration: none;
+    padding: 10px 15px;
+    background: hsl(206deg 100% 66%);
+    color: #fff;
+    border-radius: 5px;
+}
+
+@media screen and (max-width: 700px) {
+    main {
+        margin-top: 54px;
+    }
+
+    nav {
+        position: fixed;
+        width: 100%;
+    }
+
+    nav .burger {
+        justify-content: end;
+        display: flex;
+        flex-direction: row-reverse;
+        padding-right: 25px;
+    }
+
+    nav ul {
+        display: none;
+    }
+
+    nav.menu-expanded {
+        display: block;
+    }
+
+    nav.menu-expanded ul {
+        display: block;
+    }
+
+    nav a {
+        padding: 15px;
+    }
+    
+    .bar1, .bar2, .bar3 {
+        width: 32px;
+        height: 4px;
+        background-color: #fff;
+        margin: 6px 0;
+        transition: 0.4s;
+        display: block;
+    }
+
+    .bar1 {
+        margin-top: 0;
+    }
+
+    .bar3 {
+        margin-bottom: 0;
+    }
+
+    nav.menu-expanded .bar1 {
+        -webkit-transform: rotate(-45deg) translate(-7px, 6px);
+        transform: rotate(-45deg) translate(-7px, 6px);
+    }
+
+    nav.menu-expanded .bar2 {
+        opacity: 0;
+    }
+
+    nav.menu-expanded .bar3 {
+        -webkit-transform: rotate(45deg) translate(-8px, -8px);
+        transform: rotate(45deg) translate(-8px, -8px);
+    }
+
+    main > img {
+        margin-top: 10px;
+    }
+
+    #map {
+        height: 250px;
+    }
+
+    #map-link + div h2 {
+        margin-top: 24px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    main {
+        padding: 20px;
+    }
+
+    nav {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
