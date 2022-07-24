@@ -25,10 +25,10 @@ async function main() {
         event.preventDefault();
     }));
 
-    await map();
+    await initMap();
 }
 
-async function map() {
+async function initMap() {
     await loadExternalScript('https://api.mapy.cz/loader.js');
     
     window.Loader.async = true;
