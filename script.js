@@ -39,7 +39,7 @@ async function initMap() {
     const viewportWidth = document.documentElement.clientWidth;
     let zoomLevel = viewportWidth > 1000 ? 13 : 12;
     if (viewportWidth < 700) (zoomLevel = 11);
-    const map = new window.SMap(JAK.gel("mapa"), mapCenter, zoomLevel);
+    const map = new window.SMap(JAK.gel("map"), mapCenter, zoomLevel);
     map.addDefaultLayer(SMap.DEF_BASE).enable();
     map.addDefaultControls();
     
